@@ -1,0 +1,83 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16.5vw;
+    background: #333;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center; /* Aligns items horizontally centered */
+    border-radius: 30px;
+    margin: 1em;
+    height: 96%;
+  }
+  
+  .logo {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidebar img {
+    width: 50px;
+    border-radius: 50px;
+  }
+  
+  .logo-name {
+    margin-top: 30px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 100px;
+  }
+  
+  .sidebar-menu li {
+    font-size: 30px;
+    padding: 20px 25px;
+    color: whitesmoke;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.1s ease; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-menu li button{
+    font-size: 30px;
+    padding: 20px 25px;
+    color: whitesmoke;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.1s ease; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .sidebar-menu a{
+    text-decoration: none;
+  }
+  
+  .sidebar-menu li:hover {
+    background: linear-gradient(90deg, #2196f3, #e91e63);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    
+  }
+  
