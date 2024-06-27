@@ -104,9 +104,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <div className="sidebar">
         <Sidebar />
-      </div>
       <div className="content">
         <div className="box box1">
           <div className="box1-content">
@@ -248,9 +246,9 @@ const Dashboard = () => {
           <div className="chart-name">
             <h5>{coinName}</h5>
             <div className="buttons">
-              <button onClick={() => setDays(1)}>Last 24 hr</button>
-              <button onClick={() => setDays(30)}>30 Days</button>
-              <button onClick={() => setDays(365)}>1 year</button>
+              <button className={days === 1 ? 'active' : ''} onClick={() => setDays(1)}>Last 24 hr</button>
+              <button className={days === 30 ? 'active' : ''} onClick={() => setDays(30)}>30 Days</button>
+              <button className={days === 365 ? 'active' : ''} onClick={() => setDays(365)}>1 year</button>
             </div>
           </div>
           <div className="chart">

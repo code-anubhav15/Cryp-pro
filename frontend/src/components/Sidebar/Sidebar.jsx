@@ -1,25 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
-import logo from '../../assets/logo.jpg'
-import { Link } from "react-router-dom";
+import logo from '../../assets/avatar.png';
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+  const [activePath, setActivePath] = useState(location.pathname);
+
+  const handleLinkClick = (path) => {
+    setActivePath(path);
+  };
+
   return (
     <div className="sidebar">
-      <div className='logo'>
+      <div className='admin'>
         <img src={logo} alt="" />
-        <span className="logo-name">Cryp-Pro</span>
+        <span className="logo-name">Admin</span>
       </div>
       <ul className="sidebar-menu">
-        <li><Link to='/news'>News</Link></li>
-        <li><Link to='/'>Dashboard</Link></li>
-        <li><Link to='/transaction'>Transaction</Link></li>
-        <li>
-        {
-          localStorage.getItem('auth-token')?
-          <Link onClick={()=>{localStorage.removeItem('auth-token')}} to='/login'>Logout</Link>:
-          <Link to='/login'>Login</Link>    
-        }
+        <li className={activePath === '/news' ? 'active' : ''}>
+          <Link to='/news' onClick={() => handleLinkClick('/news')}>News</Link>
+        </li>
+        <li className={activePath === '/' ? 'active' : ''}>
+          <Link to='/' onClick={() => handleLinkClick('/')}>Dashboard</Link>
+        </li>
+        <li className={activePath === '/transaction' ? 'active' : ''}>
+          <Link to='/transaction' onClick={() => handleLinkClick('/transaction')}>Transaction</Link>
+        </li>
+      </ul>
+      <ul className="sidebar-menu">
+        <li className={activePath === '/login' ? 'active' : ''}>
+          {
+            localStorage.getItem('auth-token') ?
+            <Link onClick={() => { localStorage.removeItem('auth-token'); handleLinkClick('/login'); }} to='/login'>Logout</Link> :
+            <Link to='/login' onClick={() => handleLinkClick('/login')}>Login</Link>    
+          }
         </li>
       </ul>
     </div>

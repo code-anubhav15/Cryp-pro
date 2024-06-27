@@ -1,1 +1,12 @@
-* {}
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(#2196f3, #e91e63);
+    background-size: cover;
+  }

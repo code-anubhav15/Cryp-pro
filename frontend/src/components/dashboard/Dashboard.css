@@ -1,302 +1,310 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-
-    background: url('../../assets/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  .dashboard {
-    display: flex;
-  }
-  
-  
-  .content {
-    margin-left: 17vw;
-    padding: 2em;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 2em;
-    height: calc(100vh - 4em);
-    width: calc(100% - 17vw - 4em);
-    grid-template-areas:
-      "box2 box2 box2 box3 box3 box3 box4 box4 box4 box1 box1 box1 box1 "
-      "box2 box2 box2 box3 box3 box3 box4 box4 box4 box1 box1 box1 box1"
-      "box2 box2 box2 box3 box3 box3 box4 box4 box4 box6 box6 box6 box6"
-      "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6 box6"
-      "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6 box6 "
-      "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6 box6 "
-      "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6 box6 "
-      "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6 box6 "
-      "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6 box6 "
-      "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6 box6 ";
-  }
-  
-  .box {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ccc;
-    padding: 0;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border 0.3s ease;
-    backdrop-filter: blur(10px);
-  }
-  
-  .box1 { grid-area: box1; }
-  .box2 { grid-area: box2; }
-  .box3 { grid-area: box3; }
-  .box4 { grid-area: box4; }
-  .box5 { grid-area: box5; }
-  .box6 { grid-area: box6; }
-
-  .box1 {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ccc;
-    padding: 1em;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border 0.3s ease;
-    backdrop-filter: blur(10px);
-  }
-  
-  .box1-content {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .box1-item {
-    flex: 1;
-    padding: 0.5em;
-  }
-  
-  .box1-item i {
-    font-size: 2em;
-  }
-  
-  .box1-item span {
-    display: block;
-    margin-bottom: 0.5em;
-    font-weight: bold;
-  }
-  
-  .box1-item p {
-    margin: 0;
-    font-size: 1.2em;
-  }
-  
-  
-  .coin-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    gap: 1em;
-    top: -1.6em;
-  }
-  
-  .coin-header .image-container {
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    border: 2px solid #fff; 
-    overflow: hidden; 
-    background-color: bisque;
-  }
-  
-  .coin-header img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-  }
-  
-  .coin-header h2 {
-    margin: 0;
-    font-size: 1.5em;
-  }
-  
-  .coin-details {
-    margin-top: 1em;
-    text-align: left;
-    font-size: 1.1em;
-  }
-  
-  .detail-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5em 0;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .value.negative {
-    color: red;
-  }
-  
-  .value.positive {
-    color: green;
-  }
-
-  
-  .box2.negative:hover,.box3.negative:hover, .box4.negative:hover {
-    background-color: rgba(255, 0, 0, 0.2);
-    border-color: red;
-  }
-  
-  .box2.positive:hover,.box3.positive:hover, .box4.positive:hover {
-    background-color: rgba(0, 255, 0, 0.2);
-    border-color: green;
-  }
-  
-  .coin-icon {
-    margin-top: 1em;
-  }
-  
-  .coin-icon img {
-    width: 25px;
-    height: 25px;
-  }
-  
-  .box6 {
-    grid-area: box6;
-    overflow: hidden;
-  }
-  
-  .coin-list {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1em;
-    padding: 0;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8);
-    overflow-y: auto; 
-    height: 27em; 
-    width: 19.7em;
-  }
-  
-  .box2,.box3,.box4 {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border-radius: 20px;
+.dashboard {
+  display: flex;
 }
-  
-  
-  .coin-card {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    padding: 1em;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-bottom: 1px solid #ccc;
-    height:40px;
-    width: 87.5%;
-  }
-  
-  .coin-card.negative:hover {
-    background-color: rgba(255, 0, 0, 0.2);
-    border-color: red;
-  }
-  
-  .coin-card.positive:hover {
-    background-color: rgba(0, 255, 0, 0.2);
-    border-color: green;
-  }
-  
-  .coin-image {
-    margin-top: 0;
-    width: 30px;
-    height: 30px;
-  }
-  
-  .coin-info {
-    max-width: 30%;
-  }
 
-  .coin-info-details-current p , .coin-info-details-change p {
-    margin: 0%;
-  }
+.content {
+  background: rgba(252, 246, 249, 0.78);
+  border: 3px solid #FFFFFF;
+  backdrop-filter: blur(4.5px);
+  border-radius: 32px;
+  margin: 1em;
+  overflow-y: auto;
+  margin-left: 22.5vw;
+  padding: 0.85em;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  height: 91.5vh;
+  gap: 10px;
+  grid-template-areas:
+    "box2 box2 box2 box3 box3 box3 box4 box4 box4 box1 box1 box1"
+    "box2 box2 box2 box3 box3 box3 box4 box4 box4 box1 box1 box1"
+    "box2 box2 box2 box3 box3 box3 box4 box4 box4 box6 box6 box6"
+    "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6"
+    "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6"
+    "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6"
+    "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6"
+    "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6"
+    "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6"
+    "box5 box5 box5 box5 box5 box5 box5 box5 box5 box6 box6 box6";
+}
 
-  .coin-list-head {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    max-width: 70%;
-    width: 70%;
-    overflow: hidden;
-  }
+.box {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  padding: 0;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border 0.3s ease;
+  backdrop-filter: blur(10px);
+}
 
-  .coin-list-head h3 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.box1, .box2, .box3, .box4, .box5, .box6 {
+  background: rgba(252, 246, 249, 0.6);
+  color: #333;
+  border-radius: 20px;
+  padding: 1em;
+  font-weight: 500;
+  margin-top: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
-  
-  input[type="search"] {
-    margin-top: 0.75em;
-    padding: 0.35em 2em;
-    padding-right: 0.5em;
-    font-size: 1em;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    width: calc(100% - 50px);
-  }
+.box1 { grid-area: box1; height:95%;}
+.box2 { grid-area: box2; height:120%;}
+.box3 { grid-area: box3; height:120%;}
+.box4 { grid-area: box4; height:120%;}
+.box5 { grid-area: box5; }
+.box6 { grid-area: box6; }
 
-  
-  .coin-list::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .coin-list::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 0;
-  }
-  
-  .search-container {
-    position: relative;
-  }
-  
-  .search-icon {
-    position: absolute;
-    top: 62%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    cursor: pointer;
-  }  
+.box1-content {
+  display: flex;
+  justify-content: space-between;
+}
 
-  .box5 {
-    grid-area: box5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ccc;
-    padding: 1em;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border 0.3s ease;
-    backdrop-filter: blur(10px);
-  }
-  
-  .chart-name {
-    margin-bottom: 0;
-    display: flex;
-  }
-  
-  .chart {
-    width: 100%;
-    height: 100%;
-  }
-  
-  @media (max-width: 768px) {
-    .box5 {
-      grid-column: span 12;
-    }
-  }
-  
+.box1-item {
+  flex: 1;
+  padding: 0.5em;
+}
+
+.box1-item i {
+  font-size: 2em;
+}
+
+.box1-item span {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.box1-item p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.coin-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: 0.8em;
+  top: -2.5em;
+}
+
+.coin-header .image-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  overflow: hidden;
+  background-color: bisque;
+}
+
+.coin-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coin-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.coin-details {
+  margin-top: 0.4em;
+  text-align: left;
+  font-size: 1.1em;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value.negative {
+  color: red;
+}
+
+.value.positive {
+  color: green;
+}
+
+.box2.negative:hover, .box3.negative:hover, .box4.negative:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  border-color: red;
+}
+
+.box2.positive:hover, .box3.positive:hover, .box4.positive:hover {
+  background-color: rgba(0, 255, 0, 0.2);
+  border-color: green;
+}
+
+.coin-icon {
+  margin-top: 1em;
+}
+
+.coin-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+.box5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  margin-top: 100px;
+  height: 73%;
+}
+
+.chart-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px;
+  gap: 20px;
+}
+
+.chart-name h5 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button.active{
+  background-color: #333;
+}
+
+.buttons button {
+  padding: 10px 15px;
+  border: none;
+  background-color: grey;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #555;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+}
+
+.box6 {
+  overflow: hidden;
+  background: rgba(252, 246, 249, 0.6);
+  color: #333;
+  border-radius: 20px;
+  font-weight: 500;
+  height: 85%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 50px;
+}
+
+.coin-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  margin-left: -15px;
+  padding: 0;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow-y: auto;
+  height: 27.5em;
+  width: 17.3em;
+}
+
+.coin-list::-webkit-scrollbar {
+  display: none;
+}
+
+.coin-card {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #ccc;
+  height: 40px;
+  width: 87.5%;
+}
+
+.coin-card.negative:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  border-color: red;
+}
+
+.coin-card.positive:hover {
+  background-color: rgba(0, 255, 0, 0.2);
+  border-color: green;
+}
+
+.coin-image {
+  width: 30px;
+  height: 30px;
+}
+
+.coin-info {
+  max-width: 30%;
+}
+
+.coin-info-details-current p, .coin-info-details-change p {
+  margin: 0;
+}
+
+.coin-list-head {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  max-width: 70%;
+  width: 70%;
+  overflow: hidden;
+}
+
+.coin-list-head h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+input[type="search"] {
+  margin-top: 0.75em;
+  padding: 0.35em 2em;
+  padding-right: 0.5em;
+  font-size: 1em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: calc(100% - 50px);
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 62%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  cursor: pointer;
+}
