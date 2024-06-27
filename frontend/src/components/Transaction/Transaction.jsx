@@ -105,11 +105,11 @@ const RecentTransactions = ({ expenses }) => {
       <ul>
         {expenses.map((expense, index) => (
           <li key={index} className={`transaction-item ${expense.action}`}>
-            <div>{expense.date.toLocaleDateString()}</div>
+            <div>{new Date(expense.date).toLocaleDateString()}</div>
             <div className={`action-box ${expense.action}`}>{expense.action}</div>
             <div>{expense.currency.toUpperCase()}</div>
             <div className="transaction-amount">
-              {expense.action === 'buy'? '+':'-'}${expense.amount.toFixed(2)}
+              {expense.action === 'buy' ? '+' : '-'}${expense.amount.toFixed(2)}
             </div>
           </li>
         ))}
